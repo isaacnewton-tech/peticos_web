@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Lilita One";
+    background-color: #EBDFD3;
+}
+
+header{
+    color: white;
+    font-family: "Varela Round" !important;
+    background-color: transparent;
+    flex-flow: column;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    z-index: 99;
+}
+
+section:first-of-type{
+    background-color: #EBDFD3;
+    margin-top: 200px;
+}
+
+section{
+    height: 600px;
+    width: 100%;
+    background-color: white;
+    margin: 200px 0;
+}
+
+footer{
+    position: absolute;
+    bottom: -2000px;
+    width: 100%;
+    height: 300px;
+    background-color: #874a2e;
+}
+
+@media(max-width:1469px){
+    #options, #loginDiv, #nos, #logo-milk{
+        display: none;
+    }
+
+    /* MOBILE */
+    section:first-of-type{
+        margin-top: 100px;
+    }
+
+    #app{
+        height: 80px !important;
+    }
+
+    .logo img{
+        width: 50% !important;
+    }
+
+    #logo-container{
+        height: 80px !important;
+    }
+
+    #mobileMenu{
+        height: 100%;
+        width: 70%;
+
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    #mobileMenu img{
+        cursor: pointer;
+        height: 50px;
+        width: 40px;
+        filter: invert(100%);
+    }
+
+    #imagens-pet ol{
+        width: 100% !important;
+    }
+
+    #imagens-pet ol li img{
+        width: 100%;
+    }
+
+    .fixed{
+        width: 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    #optionsMenu{
+        height: fit-content;
+        width: fit-content;
+        padding: 10px 30px 10px 0px;
+
+        background-color: #874a2e;
+        position: fixed;
+        border-radius: 5px;
+        font-size: 20px;
+        top: 80px;
+
+        transform-origin: top right;
+        transform: scale(0);
+        transition: .2s;
+    }
+    .visible{
+        transform-origin: top right;
+        transform: scale(1) !important;
+        transition: .2s;
+    }
+    #optionsMenu ul{
+        width: 100%;
+        height: 90%;
+        margin-left: 10px;
+
+        flex-flow: column nowrap;
+        gap: 10px;
+
+        justify-content: left;
+        align-items: start;
+    }
+    #optionsMenu ul li > a{
+        font-family: "Varela Round";
+
+        display: inline-block;
+        transform: scale(1);
+        transition: .1s ease-out;
+    }
+    #optionsMenu ul li{
+        width: 100%;
+    }
+    #optionsMenu ul li a:hover{
+        display: inline-block;
+        transform: scale(1.1);
+        transition: .1s ease-out;
+    }
+}
+
+@media(min-width:1470px){
+    #mobileMenu{
+        display: none;
+    }
+    /* .fixed{
+        height: 60px !important;
+        position: fixed !important;
+        top: 25px;
+    
+        transition: 3s !important;
+    } 
+    .fixed img{
+        height: 100% !important;
+        width: 40% !important;
+    
+        transition: .3s !important;
+    }
+    .fullpage{
+        width: 100% !important;
+        border-radius: 0 !important;
+    } */
+
+    /* CAROUSEL */
+    .carousel::before{
+        content: "";
+        background-image: linear-gradient(to left, rgba(255,0,0,0), #EBDFD3);
+        width: 50px;
+        height: 700px;
+
+        position: absolute;
+        top: 15px;
+        left: 0;
+
+        z-index: 1;
+    }
+    .carousel::after{
+        content: "";
+        background-image: linear-gradient(to right, rgba(255,0,0,0), #EBDFD3);
+        width: 50px;
+        height: 700px;
+
+        position: absolute;
+        top: 15px;
+        right: 0;
+
+        z-index: 1;
+    }
+    /* \Carousel */
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow{
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nolist{
+    list-style: none;
+}
+
+.nolist a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.button{
+    cursor: pointer;
+}
+
+
+.logo{
+    background-color: #C54432;
+    height: 100%;
+    width: 300px;
+}
+
+.logo img{
+    height: 100%;
+    width: 65%;
+    object-fit: cover;
+
+    transition: .3s !important;
+}
+
+#logo-milk{
+    height: 100%;
+    width: 120px;
+}
+
+#logo-milk svg{
+    height: 100px;
+    display: block;
+}
+
+#logo-milk path{
+    fill: #C54432;
+}
+
+#app{
+    color: white;
+    height: 100px;
+    background-color: #874a2e;
+    justify-content: space-between;
+
+    width: 100%;
+    transition: .3s !important;
+}
+
+#logo-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: row nowrap;
+    height: 100px;
+    overflow: hidden;
+}
+
+
+#options{
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 100%;
+}
+
+#options ul{
+    height: 100%;
+    width: 100%;
+    gap: 40px;
+    font-size: 25px;
+}
+
+#options ul li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#options ul li div{
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+#options ul li div:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+#options ul li div svg:first-of-type{
+    height: 30px;
+}
+
+#options ul li div svg{
+    height: 40px;
+}
+
+#options ul li div svg path{
+    fill: white;
+}
+
+#loginDiv{
+    min-width: 200px;
+    height: 100%;
+    font-size: 15px;
+    font-family: "Varela Round";
+    margin-right: 20px;
+}
+
+#loginDiv > div > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+
+    position: relative;
+    transform: scale(1);
+    transition: transform .3s;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+#loginDiv > div > a:hover{
+    transform: scale(1.05);
+    transition: transform .3s;
+    background-color: white;
+    color: #874a2e;
+}
+
+#loginDiv a:hover svg path{
+    fill: #874a2e;
+}
+
+#nos{
+    background-color: white;
+    color: #874a2e;
+    height: 40px;
+    width: 80%;
+    border-radius: 0 0 15px 15px;
+}
+
+#nos ul{
+    height: 100%;
+    flex-flow: row;
+    gap: 20px;
+}
+
+#nos ul li{
+    flex-flow: row;
+    gap: 20px;
+}
+
+#nos ul li::after{
+    content: "";
+    display: block;
+    height: 20px;
+    width: 2px;
+    background-color: #874a2e;
+}
+
+
+/* CAROUSEL !!!! */
+.slick-arrow{
+    height: 40px;
+    width: 40px;
+}
+
+.slick-next{
+    right: -50px;
+}
+.slick-prev{
+    left: -50px;
+}
+
+.slick-arrow::before{
+    color: #C54432;
+    font-size: 40px;
+}
+
+.slick-dots{
+    bottom: -15px;
+}
+
+.slick-dots li{
+    height: 40px;
+    width: 40px;
+}
+.slick-dots li button{
+    width: 40px;
+    height: 40px;
+}
+.slick-dots li button::before{
+    color: #C54432;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+}
+.slick-dots li.slick-active button::before{
+    opacity: 100;
+    color: #C54432;
+}
+
+/* Carousel */
+
+section:first-of-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 700px;
+}
+.carousel{
+    background-color: transparent;
+    width: 70%;
+    height: 700px;
+
+    display: flex;
+    align-items: center;
+}
+.carousel-item{
+    position: relative;
+    border-radius: 20px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    width: 60vw;
+    margin: 0px 30px;
+}
+.carousel div img{
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+}
+/* \Carousel */
+
+#user-options-container{
+    width: 100%;
+}
+
+#user-options-container:hover #opcoes-user{
+    height: 177px;
+    transform-origin: top;
+    transition: 0.5s;
+}
+
+#user-options-container:not(:hover) #opcoes-user{
+    height: 0px;
+    transform-origin: bottom;
+    transition: 0.5s;
+}
+#opcoes-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+#opcoes-user{
+    position: absolute;
+    overflow: hidden;
+    top: 77px;
+    z-index: 1;
+    font-size: 20px;
+}
+
+#opcoes-user ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+
+    background-color: #C54432;
+    border-radius: 0 0 0px 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#opcoes-user ul li{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+#opcoes-user ul li:hover{
+    background-color: #c55547;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style-login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/peticosfavIcon.ico">
+    <title>Login Peticos</title>
+</head>
+<body>
+    <header class="flex shadow">
+        <div id="go-back" class="flex">
+            <a href="/home.jsp" class="flex">
+                <svg height="30" width="30" xmlns="http://www.w3.org/2000/svg" viewBox="0.00000621823 0 8.001 7.001">
+                    <path d="M 8.0009 3.5006 a 0.5 0.5 90 0 1 -0.5 0.5 h -5.793 L 3.8549 6.1466 a 0.5 0.5 90 1 1 -0.708 0.708 l -3 -3 a 0.5 0.5 90 0 1 0 -0.708 l 3 -3 a 0.5 0.5 90 0 1 0.708 0.708 L 1.7079 3.0006 H 7.5009 A 0.5 0.5 90 0 1 8.0009 3.5006" fill="#000000"/>
+                </svg>
+                Voltar
+            </a>
+        </div>
+
+        <div id="logo" class="flex">
+            <img src="/images/doglogo.png" alt="" id="dog-logo">
+            <img src="/images/Simplified Logo Brown.png" alt="" id="peticos-logo">
+        </div>
+    </header>
+    <div class="flex">
+        <form id="login" class="flex shadow" action="/login" method="post">
+            Bem-vindo!
+            <div class="flex" id="login-container">
+                <div id="userDiv" class="flex">
+                    <label for="userInput">Nome de usuário</label>
+                    <span class="svg-icons" id="userLogo">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+                          <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                    <input type="text" id="userInput" placeholder="Nome de usuário" name="username" required>
+                    <p><red id="error-username"></red></p>
+                </div>
+                <div id="senha" class="flex">
+                    <label for="senhaInput">Senha</label>
+                    <span class="svg-icons" id="lockLogo">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                          <path fill-rule="evenodd" d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                    <input type="password" id="senhaInput" placeholder="Senha" name="senha" required>
+                    <p><red id="error-senha"></red></p>
+                </div>
+                <div id="forgot-password" class="flex">
+                    <a href="./esqueceu_senha/index.html">Esqueceu a senha?</a>
+                </div>
+                <button class="flex shadow">Entrar</button>
+            </div>
+            <div id="ou" class="flex">
+                <hr>
+                <span>OU</span>
+                <hr>
+            </div>
+            <div id="login-google">
+                <p>Entrar com o Google</p>
+                <img src="/images/google_icon.png" alt="">
+            </div>
+            <div id="cadastrar" class="flex">
+                Não tem uma conta? <a href="/cadastro/cadastro.html">Cadastrar-se</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.substring(1);
+            var regex = /([^&=]+)=([^&]*)/g;
+            var m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // Verifica se o parâmetro "erro" está presente e exibe a mensagem de erro
+        window.onload = function() {
+            var params = getQueryParams();
+            if (params.erro === 'incorrectUsername') {
+                document.getElementById('error-username').textContent = 'Nome de usuário não existente!'
+                document.getElementById('error-senha').textContent = ''
+            } else if (params.erro === 'incorrectSenha'){
+                document.getElementById('error-senha').textContent = 'Senha incorreta!'
+                document.getElementById('error-username').textContent = ''
+            }
+            else{
+                document.getElementById('error-senha').textContent = ''
+                document.getElementById('error-username').textContent = ''
+            }
+        }
+    </script>
+</body>
+</html>

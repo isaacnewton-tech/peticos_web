@@ -1,0 +1,259 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #EBDFD3;
+    font-family: "Lilita One";
+}
+
+form{
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+
+    height: 100px;
+    width: 100%;
+
+    background-color: white;
+    color: #874a2e;
+
+    font-size: 25px;
+}
+header path{
+    fill: #874a2e;
+}
+
+red{
+    color: red;
+}
+
+select{
+    border: none;
+
+    background-position: 10px;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    outline: none;
+
+    font-family: "Varela Round";
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+/* Classes */
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shadow{
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Fim das Classes */
+
+/* IDS */
+#go-back{
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
+
+#go-back a{
+    text-decoration: none;
+    color: #874a2e;
+    gap: 15px;
+}
+
+#logo{
+    gap: 20px;
+    width: fit-content;
+    height: 100%;
+}
+#logo img{
+    height: 80%;
+}
+
+#login{
+    padding: 20px 0;
+    border-radius: 30px;
+    width: 50%;
+    background-color: white;
+
+    margin-top: 150px;
+
+    color: #2D8580;
+    font-size: 50px;
+
+    height: fit-content;
+
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+#login-container{
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 70%;
+    gap: 20px;
+    justify-content: center;
+}
+
+#login div{
+    flex-flow: column nowrap;
+}
+
+#login div div{
+    font-family: "Varela Round";
+    font-size: 17px;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    margin: 5px 0;
+
+    gap: 5px;
+}
+
+#login div div:last-of-type{
+    margin-bottom: 50px;
+}
+
+#login div div input{
+    background-position: 10px;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border: none;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    outline: none;
+
+    font-family: "Varela Round";
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+
+#forgot-password{
+    cursor: pointer;
+    align-items: flex-end !important;
+    color: #C54432;
+    font-size: 17px !important;
+}
+
+#submitBtn{
+    cursor: pointer;
+    background-color: #2D8580;
+    border: none;
+    color: white;
+    font-family: "Lilita One";
+
+    font-size: 30px;
+
+    width: 50%;
+
+    padding: 10px 0;
+
+    border-radius: 10px;
+}
+
+#ou{
+    margin: 25px 0;
+    font-family: "Varela Round";
+    color: rgb(167,167,167);
+    font-size: 15px;
+    width: 100%;
+    flex-flow: row nowrap !important;
+    gap: 40px;
+}
+#ou hr{
+    border: none;
+    height: 2px;
+    width: 45%;
+    background-color: rgb(167, 167, 167);
+}
+
+#login-google{
+    cursor: pointer;
+    font-family: "Varela Round";
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    align-items: flex-start !important;
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: row nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+
+}
+
+@media (max-width:1200px){
+    #dog-logo{
+        display: none;
+    }
+    #login{
+        font-size: 4vw;
+    }
+    #submit{
+        font-size: 2.5vw;
+    }
+
+    #login-google{
+        width: fit-content;
+    }
+    #login-google p{
+        display: none;
+    }
+}
+@media (max-width:440px){
+    #logo img{
+        height: 60%;
+    }
+}
+
+#login-google img{
+    height: 35px;
+}
+
+#logar{
+    flex-flow: row nowrap !important;
+    width: 100%;
+    font-family: "Varela Round";
+    color: black;
+    font-size: 15px;
+    gap: 5px;
+}
+
+#logar a{
+    color: #2D8580;
+}
+
+/* FIM DOS IDS */
