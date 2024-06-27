@@ -67,7 +67,7 @@
                         <div id="opcoes-container">
                             <div id="opcoes-user">
                                 <ul>
-                                    <li><a>Meu Perfil</a></li>
+                                    <li><a href="/user/user.jsp">Meu Perfil</a></li>
                                     <li><a>Ajuda</a></li>
                                     <li><a>Configurações</a></li>
                                     <li><a href="/logout">Sair</a></li>

@@ -503,3 +503,9 @@ section:first-of-type{
 #opcoes-user ul li:hover{
     background-color: #c55547;
 }
+
+#opcoes-user > ul > li > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
