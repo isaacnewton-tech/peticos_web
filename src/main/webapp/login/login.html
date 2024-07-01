@@ -45,7 +45,7 @@
                         </svg>
                     </span>
                     <input type="text" id="userInput" placeholder="Nome de usuário" name="username" required>
-                    <p style="position: absolute; bottom: -12px;"><red id="error-username"></red></p>
+                    <p style="position: absolute; bottom: 217px;" id="pErroUsername"><red id="error-username"></red></p>
                 </div>
                 <div id="senha" class="flex">
                     <label for="senhaInput">Senha</label>
@@ -55,7 +55,7 @@
                         </svg>
                     </span>
                     <input type="password" id="senhaInput" placeholder="Senha" name="senha" required>
-                    <p style="position: absolute; bottom: -30px"><red id="error-senha"></red></p>
+                    <p style="position: absolute; bottom: 103px" id="pErroSenha"><red id="error-senha"></red></p>
                 </div>
                 <div id="forgot-password" class="flex">
                     <a href="./esqueceu_senha/index.html">Esqueceu a senha?</a>
@@ -104,6 +104,16 @@
                 document.getElementById('error-username').textContent = ''
             }
         }
+    </script>
+
+    <script>
+        fetch('/sessionInfo')
+            .then(response => response.json())
+            .then(user => {
+                if (user !== "Usuário não logado") {
+                    window.location = "/home.jsp";
+                }})
+            .catch(error => console.error('Erro:', error));
     </script>
 </body>
 </html>

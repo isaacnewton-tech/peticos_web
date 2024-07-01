@@ -123,6 +123,8 @@
     </script>
     <script src="submitCadastro.js"></script>
     <script>
+        const submitBtn = document.getElementById('submitBtn');
+
         // Função para obter os parâmetros da URL
         function getQueryParams() {
             var params = {};
@@ -141,15 +143,29 @@
             if (params.erro === 'usedUsername') {
                 document.getElementById('error-username').textContent = 'Nome de usuário já utilizado!'
                 document.getElementById('error-email').textContent = ''
+                submitBtn.disabled = false;
+
             } else if (params.erro === 'usedEmail'){
                 document.getElementById('error-email').textContent = 'Já existe uma conta com este e-mail!'
                 document.getElementById('error-username').textContent = ''
+                submitBtn.disabled = false;
             }
             else{
                 document.getElementById('error-email').textContent = ''
                 document.getElementById('error-username').textContent = ''
             }
         }
+    </script>
+
+
+    <script>
+            fetch('/sessionInfo')
+            .then(response => response.json())
+            .then(user => {
+                if (user !== "Usuário não logado") {
+                    window.location = "/home.jsp";
+                }})
+            .catch(error => console.error('Erro:', error));
     </script>
 </body>
 </html>

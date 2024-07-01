@@ -43,4 +43,13 @@
     <servlet-name>SessionInfo</servlet-name>
     <url-pattern>/sessionInfo</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>br.com.peticos.UpdateUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/updateUser</url-pattern>
+  </servlet-mapping>
 </web-app>

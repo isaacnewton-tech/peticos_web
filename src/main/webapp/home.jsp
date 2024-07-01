@@ -27,9 +27,12 @@
         <header class="flex">
             <div id="app" class="flex shadow">
                 <div id="logo-container">
-                    <div class="logo flex">
-                        <img src="images/peticoslogo.png" alt="">
-                    </div>
+                    <a href="home.jsp" style="cursor: pointer">
+                        <div class="logo flex">
+                            <img src="images/peticoslogo.png" alt="">
+                        </div>
+                    </a>
+
                     <span id="logo-milk">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.75 40">
                             <path d="M 0 0 C 0 11.3334 0 22.6666 0 40 C 4 40 6 40 8 28 C 10 16 20 11 25 9 C 30 7 36 4 36 0 M 31 11 C 32 10 37 9 38 11 C 39 13 39 13 38 15 C 37 17 35 17 33 16 C 31 15 29 13 31 11" fill="#000000"/>
@@ -67,7 +70,7 @@
                         <div id="opcoes-container">
                             <div id="opcoes-user">
                                 <ul>
-                                    <li><a href="/user/user.jsp">Meu Perfil</a></li>
+                                    <li><a href="/user/perfil/perfil.jsp">Meu Perfil</a></li>
                                     <li><a>Ajuda</a></li>
                                     <li><a>Configurações</a></li>
                                     <li><a href="/logout">Sair</a></li>
@@ -148,7 +151,8 @@
                             userOptions.style.display = "none";
                         } else {
                             userInfo.textContent = user.username;
-                            userButton.href = "/home.jsp";
+                            userButton.onclick=function (){return false};
+                            userButton.style.cursor = "default";
                             userButton.style.fontSize = "15px";
                             userOptions.style.display = "block";
                             userOptions.style.width = (document.getElementById("loginDiv").offsetWidth - 20)+"px";

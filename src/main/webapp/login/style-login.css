@@ -91,6 +91,7 @@ input:-webkit-autofill:active{
 
 #login-container{
     width: 100%;
+    position: relative;
 }
 
 #login div{
@@ -132,7 +133,6 @@ input:-webkit-autofill:active{
 
 #userDiv{
     padding-bottom: 15px;
-    position: relative;
 }
 
 
@@ -203,13 +203,14 @@ input:-webkit-autofill:active{
 
 .svg-icons{
     position: absolute;
-    left: 5px;
+    left: 12.8vw;
+    z-index: 10;
 }
 #userLogo{
-    bottom: 25px;
+    bottom: 251px;
 }
 #lockLogo{
-    bottom: 10px;
+    bottom: 142px;
 }
 
 @media (max-width:1200px){
@@ -229,7 +230,32 @@ input:-webkit-autofill:active{
     #login-google p{
         display: none;
     }
+
+    #pErroSenha{
+        bottom: 80px !important;
+    }
 }
+@media (max-width: 736px){
+    #userDiv{
+        padding-bottom: 45px !important;
+    }
+    #userLogo{
+        bottom: 280px !important;
+    }
+}
+@media (max-width: 630px){
+    #userLogo, #lockLogo{
+        display: none;
+    }
+    #pErroSenha red, #pErroUsername red{
+        font-size: 15px !important;
+        line-height: 0px !important;
+    }
+    #pErroUsername{
+        bottom: 245px !important;
+    }
+}
+
 @media (max-width:440px){
     #logo img{
         height: 60%;
@@ -251,10 +277,6 @@ input:-webkit-autofill:active{
 
 #cadastrar a{
     color: #2D8580;
-}
-
-#senha{
-    position: relative;
 }
 
 /* FIM DOS IDS */

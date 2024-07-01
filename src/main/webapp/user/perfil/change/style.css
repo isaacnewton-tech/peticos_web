@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Lilita One";
+    background-color: #EBDFD3;
+}
+
+/* Header/ Footer e classes padrões*/
+header{
+    color: white;
+    font-family: "Varela Round" !important;
+    background-color: transparent;
+    flex-flow: column;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    z-index: 99;
+}
+
+footer{
+    position: absolute;
+    bottom: -2000px;
+    width: 100%;
+    height: 300px;
+    background-color: #874a2e;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow{
+    box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nolist{
+    list-style: none;
+}
+
+.nolist a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.logo{
+    background-color: #C54432;
+    height: 100%;
+    width: 300px;
+}
+
+.logo img{
+    height: 100%;
+    width: 65%;
+    object-fit: cover;
+
+    transition: .3s !important;
+}
+
+#logo-container a{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+#logo-milk{
+    height: 100%;
+    width: 120px;
+}
+
+#logo-milk svg{
+    height: 100px;
+    display: block;
+}
+
+#logo-milk path{
+    fill: #C54432;
+}
+
+#app{
+    color: white;
+    height: 100px;
+    background-color: #874a2e;
+    justify-content: space-between;
+
+    width: 100%;
+    transition: .3s !important;
+}
+
+#perfilTitle{
+    width: 100%;
+    font-family: "Lilita One";
+    font-size: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: row nowrap;
+    height: 100px;
+    overflow: hidden;
+}
+
+#loginDiv{
+    min-width: 200px;
+    height: 100%;
+    font-size: 15px;
+    font-family: "Varela Round";
+    margin-right: 20px;
+}
+
+#loginDiv > div > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+
+    position: relative;
+    transform: scale(1);
+    transition: transform .3s;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+#loginDiv > div > a:hover{
+    transform: scale(1.05);
+    transition: transform .3s;
+    background-color: white;
+    color: #874a2e;
+}
+
+#loginDiv a:hover svg path{
+    fill: #874a2e;
+}
+
+#user-options-container{
+    width: 100%;
+}
+
+#user-options-container:hover #opcoes-user{
+    height: 177px;
+    transform-origin: top;
+    transition: 0.5s;
+}
+
+#user-options-container:not(:hover) #opcoes-user{
+    height: 0px;
+    transform-origin: bottom;
+    transition: 0.5s;
+}
+#opcoes-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+#opcoes-user{
+    position: absolute;
+    overflow: hidden;
+    top: 77px;
+    z-index: 1;
+    font-size: 20px;
+}
+
+#opcoes-user ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+
+    background-color: #C54432;
+    border-radius: 0 0 0px 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#opcoes-user ul li{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+#opcoes-user ul li:hover{
+    background-color: #c55547;
+}
+
+#opcoes-user > ul > li > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 632px){
+    #perfilTitle p{
+        display: none;
+    }
+}
+@media (max-width: 1076px){
+    #user-info{
+        display: none;
+    }
+    #loginDiv{
+        min-width: 30px;
+    }
+    #perfilTitle p{
+        font-size: 30px !important;
+    }
+    #logo-container div{
+        width: 180px;
+    }
+}
+/*Fim do header*/
+
+.form-container{
+    width: 100%;
+    height: 200px;
+    margin-top: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formUpdate{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 20px;
+}
+
+#formUpdate > div{
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 80%;
+    font-size: 35px;
+}
+
+#formUpdate > div label{
+    color: #2D8580;
+}
+
+#formUpdate input:not(input[type='submit']){
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: "Varela Round";
+
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+#formUpdate input[type='submit']{
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    background-color: #2D8580;
+    color: white;
+    font-family: "Lilita One";
+    border-radius: 15px;
+}

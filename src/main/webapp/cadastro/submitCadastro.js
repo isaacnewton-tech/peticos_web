@@ -1,7 +1,8 @@
 const formCadastro = document.getElementById("form-cadastro")
-
+const submitBtn = document.getElementById('submitBtn');
 formCadastro.addEventListener("submit", function (event){
     event.preventDefault();
+    submitBtn.disabled = true;
     //Username, email, senha, confirmar senha
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("senha-confirmar").value;

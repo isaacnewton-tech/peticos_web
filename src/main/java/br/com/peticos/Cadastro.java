@@ -35,10 +35,6 @@ public class Cadastro extends HttpServlet {
         System.out.println(tipo_perfil);
         System.out.println(genero);
 
-        if (!Objects.equals(senha, confirmarSenha)){
-            response.sendRedirect("/cadastro/cadastro.html?erro=true");
-            return;
-        }
 
         Database db = new Database();
         Connection conn = db.connect_to_db("dbPeticos");
